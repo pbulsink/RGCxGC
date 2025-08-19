@@ -26,7 +26,6 @@ setMethod(f = "base_unfold", signature = "list", definition = function(x) {
 #' times for both dimensions are also exported.
 #'
 #' @param Object a batch_2DCOW or joined_chrom objects.
-#' @importFrom methods is new
 #' @export
 #' @examples
 #'
@@ -39,10 +38,12 @@ setMethod(f = "base_unfold", signature = "list", definition = function(x) {
 #' modulation <- chrom_1D$mod_time
 
 unfold_chrom <- function(Object) {
-  if (!(is(Object, "batch_2DCOW") || is(Object, "joined_chrom"))) {
+  if (
+    !(methods::is(Object, "batch_2DCOW") || methods::is(Object, "joined_chrom"))
+  ) {
     stop('Only batch aligned and joined chrom objects are allowed')
   }
-  if (is(Object, 'batch_2DCOW')) {
+  if (methods::is(Object, 'batch_2DCOW')) {
     unfolded_mt <- base_unfold(Object@Batch_2DCOW)
   } else {
     unfolded_mt <- base_unfold(Object@chromatograms)

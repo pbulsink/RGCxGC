@@ -25,8 +25,6 @@ setGeneric(
 #' @param thresh numerical value. A threshold to remove low loading values.
 #' @param ... Other parameters passes to \code{\link[graphics]{filled.contour}}
 #'  function.
-#' @importFrom colorRamps matlab.like matlab.like2
-#' @importFrom graphics filled.contour
 #' @exportMethod plot_loading
 #' @examples
 #'
@@ -49,12 +47,12 @@ setMethod(
     if (length(pc) > 1) {
       stop("Only on principal component has to be provided")
     }
-    if (is(Object, "MPCA")) {
+    if (methods::is(Object, "MPCA")) {
       npcs <- length(Object@loadings$loadings)
       if (pc > npcs) {
         stop(paste("There are just", npcs, "PCs"))
       }
-    } else if (is(Object, "PLSDA")) {
+    } else if (methods::is(Object, "PLSDA")) {
       npcs <- length(Object@loadings)
       if (pc > npcs) {
         stop(paste("There are just", npcs, "PCs"))
@@ -71,7 +69,7 @@ setMethod(
     }
 
     # Procedure only for MPCA object
-    if (is(Object, "MPCA")) {
+    if (methods::is(Object, "MPCA")) {
       loading <- Object@loadings$loadings[[pc]]
       if (type %in% "n") {
         loading[loading > 0] <- 0
@@ -138,12 +136,12 @@ setMethod(
       seq(Object@mod_time[1], Object@mod_time[2], length.out = 5),
       2
     )
-    filled.contour(
+    graphics::filled.contour(
       mloading,
       ...,
       plot.axes = {
-        axis(1, at = seq(0, 1, length.out = 5), labels = labx)
-        axis(2, at = seq(0, 1, length.out = 5), labels = laby)
+        graphics::axis(1, at = seq(0, 1, length.out = 5), labels = labx)
+        graphics::axis(2, at = seq(0, 1, length.out = 5), labels = laby)
       },
       xlab = "1D min",
       ylab = "2D sec"

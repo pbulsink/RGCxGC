@@ -17,7 +17,7 @@ setMethod(
     }
     raw_signal <- sapply(chrom@chromatograms, function(x) as.vector(t(x)))
     raw_signal <- t(raw_signal)
-    col_0var <- apply(raw_signal, 2, var) != 0
+    col_0var <- apply(raw_signal, 2, stats::var) != 0
     col_removed <- which(!col_0var)
     if (length(col_removed) != 0) {
       raw_signal <- raw_signal[, -col_removed]
@@ -32,7 +32,7 @@ setMethod(
       warning("NAs wer found and replaced with 0")
       raw_signal[is.na(raw_signal)] <- 0
     }
-    pca <- prcomp(raw_signal, center = center, scale. = scale)
+    pca <- stats::prcomp(raw_signal, center = center, scale. = scale)
     sum_pca <- list(summary = summary(pca))
     lds <- lapply(seq(npcs), function(i) pca$rotation[, i])
     names(lds) <- paste0("PC", seq(npcs))
@@ -57,7 +57,7 @@ setMethod(
   f = "method_MPCA",
   signature = "joined_chrom",
   definition = function(chrom, center, scale, npcs, ...) {
-    MPCA <- new("MPCA")
+    MPCA <- methods::new("MPCA")
     MPCA_raw <- base_MPCA(
       chrom = chrom,
       center = center,
@@ -103,8 +103,6 @@ setMethod(
 #'   analysis, the scores matrix, unfolded loadings, and the metadata if it
 #'   was provided when chromatograms were joined.
 #'
-#' @importFrom stats prcomp var
-#' @importFrom methods new
 #' @export
 #' @examples
 #'

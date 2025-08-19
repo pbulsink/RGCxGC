@@ -40,7 +40,7 @@ chrom_smooth <- wsmooth(chrom_2D, penalty = 1, lambda = 1e1)
 plot(chrom_smooth, nlevels = 150,
            color.palette = colorRamps::matlab.like,
            main = expression(paste(lambda, "= 10, penalty = 1")) )
-# Remove intensities bellow 1.75e5 (too high)    
+# Remove intensities bellow 1.75e5 (too high)
 chrom_smooth2 <- wsmooth(chrom_2D, penalty = 1,
                          lambda = 1e1, min_int = 1.75e5)
 plot(chrom_smooth2, nlevels = 150,

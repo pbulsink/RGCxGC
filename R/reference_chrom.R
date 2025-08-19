@@ -29,7 +29,7 @@ setMethod(
   signature = "joined_chrom",
   definition = function(chroms, stat = "mean") {
     census_chrom <- base_reference(chroms, stat)
-    ref_chrom <- new("preproc_GCxGC")
+    ref_chrom <- methods::new("preproc_GCxGC")
     ref_chrom@chromatogram <- census_chrom
     ref_chrom@time <- chroms@time
     ref_chrom@mod_time <- chroms@mod_time

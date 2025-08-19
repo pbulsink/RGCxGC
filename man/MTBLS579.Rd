@@ -3,8 +3,7 @@
 \docType{data}
 \name{MTBLS579}
 \alias{MTBLS579}
-\title{Chromatograms from Dioagnostic Metabolite Biomarkers 
-        of Chronic Typhoid Carraige study}
+\title{Chromatograms from Dioagnostic Metabolite Biomarkers of Chronic Typhoid Carraige study}
 \format{
 A joined_chrom object containing four slots:
 \describe{
@@ -21,7 +20,7 @@ A joined_chrom object containing four slots:
 data(MTBLS579)
 }
 \description{
-The dataset was retrieved from MetaboLights with the 
+The dataset was retrieved from MetaboLights with the
 identifier number MTBLS79 \url{https://www.ebi.ac.uk/metabolights/MTBLS579}.
 Two groups from the entire study was downloaded: control and \emph{S. typhi}
 carriage. The name files of control group are: 08GB, 09GB, and 14GB,
@@ -32,7 +31,7 @@ MetaboLights database. For the \emph{S. typhi} group the names are:
 
 Due to the large size of chromatograms, these data is a subset of the whole
 chromatograms from 7 min to 18 min of chromatografic run. If you would
-like to acces the whole formated chromatograms, please go to 
+like to acces the whole formated chromatograms, please go to
 \url{https://github.com/DanielQuiroz97/MTBLS579}.
 
 The original study was developed by

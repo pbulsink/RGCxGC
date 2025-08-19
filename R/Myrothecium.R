@@ -36,7 +36,6 @@
 #' @usage data(Myrothecium)
 #'
 #' @keywords datasets antagonism microbial
-#' @importFrom Rdpack reprompt
 #' @format A joined_chrom object containing four slots:
 #' \describe{
 #'   \item{chromatograms}{A named list with the two-dimensional chromatograms}

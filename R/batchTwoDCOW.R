@@ -60,7 +60,7 @@ setMethod(
     if (add_ref) {
       names(lst_aligned) <- c(ref_name, names(lst_aligned)[-1])
     }
-    chrom_2DCOW <- new("batch_2DCOW")
+    chrom_2DCOW <- methods::new("batch_2DCOW")
     chrom_2DCOW@name <- "batch_2DCOW"
     chrom_2DCOW@mod_time <- reference@mod_time
     chrom_2DCOW@time <- reference@time
@@ -102,7 +102,6 @@ setMethod(
 #'  be joined together with the sample chromatograms. By the fault add_ref = F.
 #'  If add_ref is set to T, the provide reference chromatogram will
 #'  be included as another sample chromatogram in the downstream analysis.
-#' @importFrom methods new is
 #' @export
 #' @examples
 #'
@@ -142,7 +141,7 @@ batch_2DCOW <- function(
   if (length(names(sample_chroms)) != length(sample_chroms)) {
     stop('A named list must be provided')
   }
-  if (!is(sample_chroms, "list")) {
+  if (!methods::is(sample_chroms, "list")) {
     stop("A list must be provided")
   }
   ref_name <- deparse(substitute(reference))

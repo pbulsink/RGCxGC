@@ -20,20 +20,20 @@ data(Myrothecium)
 This object contains six chromatograms of the microbial
 metabolic kinetics. \emph{Myrothecium sp.} were cultured in CMA.
 Inoculation was made from Petri dishes with the fully-grown fungal cells and
-sterile distilled water (to wash the surface of the plate). The plate was 
+sterile distilled water (to wash the surface of the plate). The plate was
 scraped with a sterile glass handle to obtain the spore suspension.
 The suspension was liquated and the concentration of 2.4 x 105 spores/mL was
 determined using a Neubauer chamber and an optical microscope. Then, 50 uL
 of the suspension was inoculated in a flow chamber into the tubes containing
 the culture medium. Tubes were kept at 25 celsius degree in a growth
-chamber with 12h of photoperiod. 
+chamber with 12h of photoperiod.
 
 A solid-phase microextraction (SPME) assay containing a
 DVB / CAR / PDMS (Divinylbenzene / Carboxene / Polymethylsiloxane 50/30 mm)
 fiber was placed into the tube headspace.
 
 A set of columns consisting of HP-5MS 30m x 0.25mm x 0.25 um
-connected to a Supelcowax 1m x 0.10mm × 0.10um 
+connected to a Supelcowax 1m x 0.10mm × 0.10um
 with a 1m x 0.25mm deactivated silica capillary being allocated between
 them. In these tests, a modulation period of 5s was used.
 

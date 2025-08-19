@@ -6,7 +6,12 @@ setMethod(
   f = "base_baselineCorr",
   signature = c("raw_GCxGC"),
   definition = function(Object, ...) {
-    chrom_bc <- apply(Object@chromatogram, MARGIN = 2, baseline.corr, ... = ...)
+    chrom_bc <- apply(
+      Object@chromatogram,
+      MARGIN = 2,
+      ptw::baseline.corr,
+      ... = ...
+    )
     return(chrom_bc)
   }
 )
@@ -36,9 +41,6 @@ setMethod(
 #' @param ... other parameters passed to \code{\link[ptw]{baseline.corr}}
 #'  function in the pwt package.
 #'
-#' @importFrom ptw baseline.corr
-#' @importFrom methods new
-#' @importFrom Rdpack reprompt
 #' @export
 #' @examples
 #' library(colorRamps)
@@ -51,7 +53,7 @@ setMethod(
 #' @references
 #'     \insertAllCited{}
 baseline_corr <- function(chromatogram, ...) {
-  preproc_chrom <- new(
+  preproc_chrom <- methods::new(
     'preproc_GCxGC',
     name = chromatogram@name,
     mod_time = chromatogram@mod_time,

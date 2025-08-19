@@ -49,6 +49,11 @@ make_loadings <- function(floadings, time, mod_time, acq_rate) {
     )
   }
   m_loadings <- base_makelds(floadings, D1_cols = D1_cols, D2_rows = D2_rows)
-  lds <- new("foreign", loadings = m_loadings, time = time, mod_time = mod_time)
+  lds <- methods::new(
+    "foreign",
+    loadings = m_loadings,
+    time = time,
+    mod_time = mod_time
+  )
   return(lds)
 }

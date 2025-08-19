@@ -25,7 +25,7 @@ position.}
  performing by splitting the chromagram with the relative value provided.
 }
 \examples{
-\donttest{ 
+\donttest{
  library(colorRamps)
  GB08_fl <- system.file("extdata", "08GB.cdf", package = "RGCxGC")
  GB08 <- read_chrom(GB08_fl, 5L)

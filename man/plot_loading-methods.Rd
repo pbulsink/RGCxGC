@@ -14,8 +14,8 @@ plot_loading(Object, type = "n", pc = 1, thresh, ...)
 \arguments{
 \item{Object}{a MPCA object}
 
-\item{type}{the value type of loadings, \emph{p} for positive, 
-\emph{n} for negative, and \emph{b} for negative and positive 
+\item{type}{the value type of loadings, \emph{p} for positive,
+\emph{n} for negative, and \emph{b} for negative and positive
 loading values.}
 
 \item{pc}{the principal component to plot.}

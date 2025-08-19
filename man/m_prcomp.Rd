@@ -32,7 +32,7 @@ MPCA returns a list whit class "MPCA" containing the summary of the
 two-dimensional chromatograms and returns the results as object of class
 MPCA.
 Before to perform the calculation, each given chromatogramas are unfolded
-to a single dimension. All chromatograms are merged and principal component 
+to a single dimension. All chromatograms are merged and principal component
 analysis is performed with the built-in \code{\link[stats]{prcomp}} function.
 The print method for these objects prints the summary of the analysis.
 This algorithm was first presented by \insertCite{Wold1987}{RGCxGC}.

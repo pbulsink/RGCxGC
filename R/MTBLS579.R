@@ -1,6 +1,4 @@
-#' @title  Chromatograms from Dioagnostic Metabolite Biomarkers
-#'         of Chronic Typhoid Carraige study
-#'
+#' @title  Chromatograms from Dioagnostic Metabolite Biomarkers of Chronic Typhoid Carraige study
 #'
 #' @description   The dataset was retrieved from MetaboLights with the
 #' identifier number MTBLS79 \url{https://www.ebi.ac.uk/metabolights/MTBLS579}.

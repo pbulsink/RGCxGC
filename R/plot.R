@@ -22,8 +22,6 @@ setGeneric(name = "plot", def = function(Object, type = "f", ...) {
 #' @param ... Other parameters passed to \code{\link[graphics]{filled.contour}}
 #'  or \code{\link[graphics]{filled.contour}} function, it depends on the value
 #'  of the \emph{type} argument.
-#' @importFrom colorRamps matlab.like2
-#' @importFrom graphics axis filled.contour contour
 #' @exportMethod plot
 #' @examples
 #'
@@ -50,8 +48,8 @@ setMethod(
       graphics::filled.contour(
         t(Object@chromatogram),
         plot.axes = {
-          axis(1, at = seq(0, 1, length.out = 5), labels = labx)
-          axis(2, at = seq(0, 1, length.out = 5), labels = laby)
+          graphics::axis(1, at = seq(0, 1, length.out = 5), labels = labx)
+          graphics::axis(2, at = seq(0, 1, length.out = 5), labels = laby)
         },
         xlab = "1D min",
         ylab = "2D sec",
@@ -67,8 +65,8 @@ setMethod(
         ylab = "2D sec",
         ... = ...
       )
-      axis(1, at = seq(0, 1, length.out = 5), labels = labx)
-      axis(2, at = seq(0, 1, length.out = 5), labels = laby)
+      graphics::axis(1, at = seq(0, 1, length.out = 5), labels = labx)
+      graphics::axis(2, at = seq(0, 1, length.out = 5), labels = laby)
     }
   }
 )

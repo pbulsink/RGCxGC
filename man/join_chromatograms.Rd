@@ -16,7 +16,7 @@ named as \emph{Names} to merge with the imported chromatograms.}
 }
 \description{
 `join_chromatograms` saves chromatograms in a
- named list slot. Also, it saves information like metadata and 
+ named list slot. Also, it saves information like metadata and
  retention times.
 }
 \examples{

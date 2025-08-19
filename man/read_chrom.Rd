@@ -8,7 +8,7 @@ read_chrom(
   name,
   mod_time,
   sam_rate,
-  per_eval = 0.1,
+  per_eval = 1,
   x_cut = NULL,
   y_cut = NULL,
   verbose = TRUE
@@ -19,7 +19,7 @@ read_chrom(
 
 \item{mod_time}{a integer, the modulation time of the chromatographic run.}
 
-\item{sam_rate}{a integer, the sampling rate of the equipment.
+\item{sam_rate}{a integer, the sampling rate of the equipment in Hz.
 If sam_rate is missing, the sampling rate is calculated by the dividing 1 by
 the difference of two adjacent scan time.}
 
@@ -47,7 +47,7 @@ representing the two-dimensional chromatogram. This function is an
 adaptation of the presented routine by \insertCite{Skov2008;textual}{RGCxGC}.
 }
 \examples{
- 
+
 GB08_fl <- system.file("extdata", "08GB.cdf", package = "RGCxGC")
 GB08 <- read_chrom(GB08_fl, 5L)
 

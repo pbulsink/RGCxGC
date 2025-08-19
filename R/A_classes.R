@@ -116,7 +116,7 @@ setClass(
     mod_time = "numeric"
   ),
   validity = function(object) {
-    if (is(objetc, "raw_GCxGC")) {
+    if (methods::is(objetc, "raw_GCxGC")) {
       TRUE
     } else {
       print(

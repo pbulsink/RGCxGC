@@ -27,7 +27,7 @@ setMethod(
       RNetCDF::close.nc(raw_1d_chrom)
     } else if (tools::file_ext(Object@name) == "csv") {
       # .csv could be long or pre-folded
-      raw_csv_chrom <- read.csv(Object@name, header = FALSE)
+      raw_csv_chrom <- utils::read.csv(Object@name, header = FALSE)
       if (ncol(raw_csv_chrom) == 1) {
         # This is a GCxGC single dimensional output
         tic <- as.vector(raw_csv_chrom[, 1])
@@ -178,7 +178,6 @@ setMethod(
 #'  to be mantained in the second dimension.
 #' @param verbose a logical indicating if the information of chromatogram is
 #'  printted in the console.
-#' @importFrom methods is
 #' @export
 #' @examples
 #'
@@ -196,7 +195,7 @@ read_chrom <- function(
   y_cut = NULL,
   verbose = TRUE
 ) {
-  chromatogram <- new('raw_GCxGC', name = name, mod_time = mod_time)
+  chromatogram <- methods::new('raw_GCxGC', name = name, mod_time = mod_time)
   chromatogram <- Mread_GCxGC(
     chromatogram,
     mod_time,

@@ -10,7 +10,7 @@ contains a dedicated slot to storage the folded two-dimensional chromatogram.
 }
 \details{
 In the first creation of a \emph{raw_GCxGC} object, the slot for the
-chromatogram is not created yet. To read and fold the chromatogram 
+chromatogram is not created yet. To read and fold the chromatogram
 use the \code{\link{read_chrom}}  function.
 }
 \section{Slots}{

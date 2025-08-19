@@ -112,7 +112,7 @@ setMethod(
         }
       }
     }
-    ret_warp_y <- na.omit(ret_warp_y)
+    ret_warp_y <- stats::na.omit(ret_warp_y)
     ret_warp_y <- matrix(ret_warp_y, nrow = w_dim[1], ncol = w_dim[2])
     x_warp <- matrix(nrow = row_x, ncol = col_x)
     for (i in seq(1, len_d1 - 1)) {
@@ -210,7 +210,7 @@ setMethod(
     if (all(sample_chrom@mod_time != ref_chrom@mod_time)) {
       stop('The modulation time of chromatograms are not the same')
     }
-    al_chrom <- new("aligned_GCxGC")
+    al_chrom <- methods::new("aligned_GCxGC")
     al_chrom@mod_time <- sample_chrom@mod_time
     al_chrom@name <- sample_chrom@name
     al_chrom@time <- sample_chrom@time
@@ -242,7 +242,6 @@ setMethod(
 #'  which the first and second dimension will be divided, respectively.
 #' @param max_warp A two integer vector with the maximum warping parameter.
 #'
-#' @importFrom stats na.omit approx
 #' @export
 #' @examples
 #'

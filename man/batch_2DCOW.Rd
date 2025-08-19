@@ -7,7 +7,7 @@
 batch_2DCOW(reference, sample_chroms, segments, max_warp, add_ref = FALSE)
 }
 \arguments{
-\item{reference}{a GCxGC chromatogram which will be taken as the reference 
+\item{reference}{a GCxGC chromatogram which will be taken as the reference
 chromatogram.}
 
 \item{sample_chroms}{a named list with the sample chromatograms which will
@@ -21,7 +21,7 @@ the first and second dimension}
 
 \item{add_ref}{a logical indicating if the reference chromatogram will
 be joined together with the sample chromatograms. By the fault add_ref = F.
-If add_ref is set to T, the provide reference chromatogram will 
+If add_ref is set to T, the provide reference chromatogram will
 be included as another sample chromatogram in the downstream analysis.}
 }
 \description{
@@ -37,8 +37,8 @@ the subsequent analysis, such as MPCA. If you would like to add the reference
 chromatogram, then add_ref = T.
 
 This is an adaptation of two-dimensional COW alignment, firstly implemented
-in MATLAB. This function takes a set of samples chromatogram to be aligned 
-against to the reference. The argument [segment] will be used 
+in MATLAB. This function takes a set of samples chromatogram to be aligned
+against to the reference. The argument [segment] will be used
 to split the whole chromatogram in \emph{n} and \emph{m} parts in the first
 and the second dimension, respectively. The [max_warp] argument provides
 the maximum tolerance of the signal transformation for the first and the

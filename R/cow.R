@@ -284,7 +284,7 @@ setMethod(
       for (j in seq(1, dim_x[1])) {
         ind_x <- seq(Warping[j, i], Warping[j, i + 1])
         len_x <- Warping[j, i + 1] - Warping[j, i]
-        Xwarped[indt] <- approx(
+        Xwarped[indt] <- stats::approx(
           x = ind_x - Warping[j, i] + 1,
           y = X[ind_x],
           xout = seq(0, lent) / lent * len_x + 1

@@ -23,7 +23,6 @@ Also, in order to keep information about chromatographic runs, the retention
 times for both dimensions are also exported.
 }
 \examples{
- 
 
 data(Myrothecium)
 # Unfold 2D chromatogram

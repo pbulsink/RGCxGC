@@ -34,7 +34,7 @@ setGeneric(name = "method_smooth", def = function(Object, penalty, lambda) {
 })
 
 setMethod(f = "method_smooth", definition = function(Object, penalty, lambda) {
-  if (!is(Object, "raw_GCxGC")) {
+  if (!methods::is(Object, "raw_GCxGC")) {
     stop("The provided object is not a raw_GCxGC")
   }
   Object@chromatogram <- base_smooth(Object, penalty, lambda)
@@ -61,7 +61,6 @@ setMethod(f = "method_smooth", definition = function(Object, penalty, lambda) {
 #'   The min intensity value replace signals bellow the given value with 0.
 #'   For quadrupole mass detector this artifacts may range from 0-100, while
 #'   for TOF mass analyzers it can be 0-1e3.
-#' @importFrom methods new is
 #' @export
 #' @examples
 #'
@@ -81,7 +80,7 @@ setMethod(f = "method_smooth", definition = function(Object, penalty, lambda) {
 #' @references
 #'     \insertAllCited{}
 wsmooth <- function(chromatogram, penalty = 1, lambda = 1, min_int = 0) {
-  preproc_chrom <- new(
+  preproc_chrom <- methods::new(
     "preproc_GCxGC",
     name = chromatogram@name,
     mod_time = chromatogram@mod_time,

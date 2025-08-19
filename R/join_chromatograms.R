@@ -6,7 +6,7 @@ setMethod(
   f = "base_joinChrom",
   signature = "raw_GCxGC",
   definition = function(x) {
-    if (!is(x, "batch_2DCOW")) {
+    if (!methods::is(x, "batch_2DCOW")) {
       chrom_name <- deparse(substitute(x))
       joinedChrom <- list(x@chromatogram)
       names(joinedChrom) <- chrom_name
@@ -32,16 +32,16 @@ setMethod(
   definition = function(x, y, groups, xy_names, ...) {
     all_chrom <- base_joinChrom(x)
     all_chrom <- c(all_chrom, base_joinChrom(y))
-    if (!is(x, "batch_2DCOW") & !is(y, "batch_2DCOW")) {
+    if (!methods::is(x, "batch_2DCOW") & !methods::is(y, "batch_2DCOW")) {
       names(all_chrom) <- xy_names
     }
     others_chrom <- list(...)
-    test_chrom <- sapply(others_chrom, is, "GCxGC")
+    test_chrom <- sapply(others_chrom, methods::is, "GCxGC")
     if (!all(test_chrom)) {
       stop('Only GCxGC objects are acepted')
     }
     if (length(others_chrom) > 0) {
-      complex_condi <- sapply(others_chrom, is, "batch_2DCOW")
+      complex_condi <- sapply(others_chrom, methods::is, "batch_2DCOW")
       # Single chromatograms only
       if (sum(!complex_condi) == length(complex_condi)) {
         others_nm <- names(others_chrom)
@@ -76,7 +76,7 @@ setMethod(
       # Missing names asignation for single chroms
       all_chrom <- c(all_chrom, others_joined)
     }
-    joined_chrom <- new("joined_chrom")
+    joined_chrom <- methods::new("joined_chrom")
     joined_chrom@chromatograms <- all_chrom
     if (!missing(groups)) {
       if (!inherits(groups, "data.frame")) {
@@ -108,7 +108,6 @@ setMethod(
 #' @param groups a data.frame containing the metadata. It must have a column
 #'  named as \emph{Names} to merge with the imported chromatograms.
 #' @param ... other GCxGC objects to be merged
-#' @importFrom methods is new
 #' @export
 #' @examples
 #'
@@ -121,7 +120,7 @@ setMethod(
 #'                        Type = c("Control", "Treatment"))
 #' join_metadata <- join_chromatograms(GB08, GB09, groups = metadata)
 join_chromatograms <- function(x, y, groups, ...) {
-  if (is(x, "batch_2DCOW") & is(y, "batch_2DCOW")) {
+  if (methods::is(x, "batch_2DCOW") & methods::is(y, "batch_2DCOW")) {
     xy_names <- NULL
   } else {
     xy_names <- c(deparse(substitute(x)), deparse(substitute(y)))

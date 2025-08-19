@@ -15,7 +15,7 @@ chromatographic run}
 
 \item{mod_time}{the modulation time of the second dimension.}
 
-\item{acq_rate}{the acquisition rate of the mass analyzer. 
+\item{acq_rate}{the acquisition rate of the mass analyzer.
 The acquisition rate  is printed when read_chrom function is performed}
 }
 \description{
