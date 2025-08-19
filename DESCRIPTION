@@ -1,7 +1,7 @@
 Package: RGCxGC
 Type: Package
 Title: Preprocessing and Multivariate Analysis of Bidimensional Gas Chromatography Data
-Version: 1.2.0
+Version: 1.2.0.9000
 Date: 2022-12-13
 Authors@R: c(
     person("Cristian", "Quiroz-Moreno",

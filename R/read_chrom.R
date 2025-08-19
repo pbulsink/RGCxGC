@@ -18,20 +18,20 @@ setMethod(
     verbose
   ) {
     # Read data as .cdf or .csv input
-    if (tools::file_ext(Object@name) == ".cdf") {
+    if (tools::file_ext(Object@name) == "cdf") {
+      message('reading by NetCDF')
+      message(Object@name)
       raw_1d_chrom <- RNetCDF::open.nc(Object@name)
       scan_time <- RNetCDF::var.get.nc(raw_1d_chrom, "scan_acquisition_time")
       tic <- RNetCDF::var.get.nc(raw_1d_chrom, "total_intensity")
       RNetCDF::close.nc(raw_1d_chrom)
-    } else if (tools::file_ext(Object@name) == ".csv") {
+    } else if (tools::file_ext(Object@name) == "csv") {
       # .csv could be long or pre-folded
       raw_csv_chrom <- read.csv(Object@name, header = FALSE)
       if (ncol(raw_csv_chrom) == 1) {
         # This is a GCxGC single dimensional output
         tic <- as.vector(raw_csv_chrom[, 1])
-        scan_time <- seq(from = 0, by = 1 / sam_rate, length.out = length(tic))[
-          600
-        ]
+        scan_time <- seq(from = 0, by = 1 / sam_rate, length.out = length(tic))
       }
     }
 
@@ -178,7 +178,6 @@ setMethod(
 #'  to be mantained in the second dimension.
 #' @param verbose a logical indicating if the information of chromatogram is
 #'  printted in the console.
-#' @importFrom RNetCDF open.nc var.get.nc
 #' @importFrom methods is
 #' @export
 #' @examples
