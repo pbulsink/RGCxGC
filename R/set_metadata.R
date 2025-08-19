@@ -1,9 +1,9 @@
 #' @export
 #' @docType methods
 #' @rdname set_metadata-methods
-setGeneric(name = "set_metadata",
-           def = function(Object, metadata)
-             standardGeneric("set_metadata"))
+setGeneric(name = "set_metadata", def = function(Object, metadata) {
+  standardGeneric("set_metadata")
+})
 
 #' @title  Set the metadata for a joined_chrom
 #' @rdname set_metadata-methods
@@ -12,8 +12,8 @@ setGeneric(name = "set_metadata",
 #' @param Object a joined_chrom object
 #' @param metadata a data.frame containing the metadata. It must have a column
 #'  named as \emph{Names} to merge with the chromatograms.
-#' @examples 
-#' 
+#' @examples
+#'
 #' GB08_fl <- system.file("extdata", "08GB.cdf", package = "RGCxGC")
 #' GB09_fl <- system.file("extdata", "09GB.cdf", package = "RGCxGC")
 #' GB08 <- read_chrom(GB08_fl, 5L)
@@ -23,9 +23,11 @@ setGeneric(name = "set_metadata",
 #' join_chrom <- join_chromatograms(GB08, GB09)
 #' join_metadata <- set_metadata(join_chrom, metadata = extra_info)
 
-setMethod(f = 'set_metadata',
-          signature = c("joined_chrom", "data.frame"),
-          definition = function(Object, metadata){
-            Object@groups <- metadata
-            return(Object)
-          })
+setMethod(
+  f = 'set_metadata',
+  signature = c("joined_chrom", "data.frame"),
+  definition = function(Object, metadata) {
+    Object@groups <- metadata
+    return(Object)
+  }
+)
